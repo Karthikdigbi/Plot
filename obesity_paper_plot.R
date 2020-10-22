@@ -1,4 +1,4 @@
-## Filename: Plot.R
+## Filename: obesity_paper_plot.R
 ## Author: Karthik Muthukumar
 
 ## Loading required libraries
@@ -104,9 +104,9 @@ fig13<-ggplot(data_110_130, aes(factor(bmi_swift_cohort, levels = c("Negative sw
 ggarrange(fig12,fig13,nrow = 1, common.legend = F)
 
 
-# Signifiaction SNPs Risk Alleles distribution across participants
+# Significant SNPs Risk Alleles distribution across participants
 ob_data<-data_110_130%>% 
-  select(dna_kit_id, 24:32)%>%## Select trait names based on requirement
+  select(dna_kit_id, 24:32)%>%## Select trait(s) names based on requirement
   tidyr::gather(.,key = trait, value = risk, -"dna_kit_id")
 
 obesity_risk_count <- ob_data %>%  
